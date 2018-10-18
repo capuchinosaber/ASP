@@ -1,0 +1,175 @@
+﻿table.sorting tr:not(.home) {
+    cursor: pointer;
+}
+
+.ui-state-highlight {
+    border: 1px dashed #ccc;
+}
+
+div.new-cat {
+    margin-top: 30px;
+    position: relative;
+}
+
+span.ajax-text {
+    display: none;
+}
+
+table.sorting.categories td {
+    padding: 20px !important;
+}
+
+.ajaxdivtd {
+    position: absolute;
+}
+
+span.loader {
+    display: none;
+}
+
+span.ajaxmsg {
+    background: green;
+    color: white;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+}
+
+.ajaxcart {
+    position: relative;
+    top: 5px;
+}
+
+.ib {
+    display: inline-block !important;
+}
+
+ul.adminarea {
+    position: relative;
+    top: 15px;
+}
+
+.ajaxbg {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background: white;
+    display: none;
+    z-index: 1;
+}
+
+.ajaxbg span {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+
+form.paypalform {
+    position: absolute;
+    left: -2000px;
+}
+
+.row {
+    position: relative;
+}
+
+.vertical-menu {
+    background-color: #f0d9d9;    
+    width: 17em;
+    min-height: 44em;
+    float: left;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: Georgia;
+}
+
+.vertical-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.vertical-menu ul li {
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
+
+.vertical-menu ul li a {
+    font-size: large;
+    text-transform: uppercase;
+    text-decoration: none;    
+    color: #B50000;
+    display: block;
+    margin-top:5%;
+}
+
+.vertical-menu ul li a:hover {
+    background-color: #e2b6b6;
+    padding: 5%;
+}
+ 
+.vertical-menu ul li .active {
+    background-color: #e9e963;
+    color: #345A5E;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+}
+
+h1 {
+    text-transform: uppercase;  
+    font-family: Georgia, 'Times New Roman', Times, serif !important;  
+    font-weight: 500;
+    font-size: 35px;
+    color: #B50000;    
+    padding: 3%;
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 110%;
+    text-shadow:    0 1px 0 #b3b3b3,
+                    0 2px 0 #a6a6a6,
+                    0 3px 0 #999999,
+                    0 4px 0 #8c8c8c,
+                    0 5px 0 #808080,
+                    0 6px 1px rgba(0,0,0,.1),
+                    0 0 5px rgba(0,0,0,.1),
+                    0 1px 3px rgba(0,0,0,.3),
+                    0 3px 5px rgba(0,0,0,.2),
+                    0 5px 10px rgba(0,0,0,.25),
+                    0 10px 10px rgba(0,0,0,.2),
+                    0 20px 20px rgba(0,0,0,.15);
+    
+}
+
+.btn {
+      background-color: #b64949;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 25px !important;
+      margin: 4px 2px;
+      opacity: 1;
+      transition: 0.3s;     
+      min-width: 50%;
+      min-height:50% !important;
+      align-content:center;
+      text-transform: uppercase;
+      text-shadow: 0 -2px 3px #cccccc;
+}
+
+.btn:hover {
+    opacity:0.6;
+    
+}
+

@@ -1,0 +1,153 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Ordered Food Online</title>
+    <environment names="Development">
+        <link rel="stylesheet" href="~/Content/bootstrap.css" />
+        <link rel="stylesheet" href="~/Content/Site.css" />
+    </environment>
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+</head>
+<body>    
+     
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="vertical-menu">                
+                        <ul>
+                            <li>LOGO</li>
+                            <!--
+                                <h2>@Html.ActionLink("FoodDelivery", "Index", "Pages", new { area = "" }, new { @class = "navbar-brand" }) </h2>
+                              -->
+                            @Html.Action("PagesMenuPartial", "Pages");
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li><a href="/account/logout">Logout</a></li>
+                            }
+                            else
+                            {
+                                if (ViewBag.Title == "Login")
+                                {
+                                    <li class="active"><a href="/account/login">Login</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/account/login">Login</a></li>
+                                }
+                            }
+                            @if (Request.IsAuthenticated && User.IsInRole("User"))
+                            {
+                                if (ViewBag.Title == "User Profile" || ViewBag.Title == "Orders")
+                                {
+                                    <li class="active">@Html.Action("UserNavPartial", "Account", new { area = "" })</li>
+                                }
+                                else
+                                {
+                                    <li>@Html.Action("UserNavPartial", "Account", new { area = "" })</li>
+                                }
+                            }
+                        </ul>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <ul class="navbar-right adminarea">
+                                <li>@Html.ActionLink("Admin Area", "Index", "Dashboard", new { area = "Admin" }, null) </li>
+                            </ul>
+                        }
+
+                    </div>
+                </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <h1>ordered food online services</h1>
+                </div>
+
+                <div class="row">
+                    <p>INTRODUCTION ABOUT OUR SERVICES AND PRODUCTS<hr/>INTRODUCTION ABOUT OUR SERVICES AND PRODUCTS<hr />
+                        INTRODUCTION ABOUT OUR SERVICES AND PRODUCTS<hr />INTRODUCTION ABOUT OUR SERVICES AND PRODUCTS<hr />
+                        INTRODUCTION ABOUT OUR SERVICES AND PRODUCTS<hr />
+                        INTRODUCTION ABOUT OUR SERVICES AND PRODUCTS<hr /></p>
+                </div>
+
+                <div class="row">
+                    <button class="btn">Start Your Order Here!</button>
+                </div>
+            </div>
+
+            
+            
+            <!--
+            <div class="body-content">
+                <div class="row">
+
+                <div class="ajaxbg">
+                    <span><img src="~/Content/img/ajax-loader.gif" /></span>
+                </div>
+                        @if (ViewBag.Title != "Create Account" &&
+                    ViewBag.Title != "Login" &&
+                    ViewBag.Title != "User Profile" &&
+                    ViewBag.Title != "Orders"
+                    )
+                       {
+                        <div class="col-sm-6 col-sm-3">
+                        @Html.Action("CategoryMenuPartial", "Shop")
+                        </div>
+                        }
+
+                        @if (ViewBag.Title == "User Profile")
+                    {
+                    <div class="col-sm-6 col-sm-3">
+                        <ul>
+                            <li><a href="/account/orders">My Orders</a></li>
+                        </ul>
+                    </div>
+                }
+                @if (ViewBag.Title == "Orders")
+            {
+                    <div class="col-sm-6 col-sm-3">
+                        <ul>
+                            <li><a href="/account/user-profile">My Profile</a></li>
+                        </ul>
+                    </div>
+                }
+                @if (ViewBag.Sidebar == "Yes")
+            {
+                    <div class="col-sm-5 col-sm-4">
+                        @RenderBody()
+                    </div>
+                    <div class="col-col-sm-6 col-sm-3">
+                        @Html.Action("SidebarPartial", "Pages")
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-5 col-sm-4">
+                        @RenderBody()
+                    </div>
+                }
+                </div>               
+                
+            </div>
+            -->
+            <hr />
+            <footer>
+                <p><br /> <br /><br/> &copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+    </div>
+
+
+
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+</body>
+</html>
